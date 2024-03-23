@@ -1,6 +1,6 @@
 ---
 # for information on what this file is, see
-# https://cs.anu.edu.au/courses/comp2300/resources/faq/#statement-of-originality
+# https://comp.anu.edu.au/courses/comp2300/resources/faq/#statement-of-originality
 
 # for styling of references, see
 # https://www.acm.org/publications/authors/reference-formatting

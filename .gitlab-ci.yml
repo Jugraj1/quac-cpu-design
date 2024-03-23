@@ -62,8 +62,8 @@ report:
       echo "Word Count: $var"
     - > 
       if (( $var > 300)); then
-          if (( $var > 2200)); then
-            echo "Your report should be < 2000 words!";
+          if (( $var > 1400)); then
+            echo "Your report should be < 1000 words!";
             exit 1;
           else
             exit 0;
@@ -204,7 +204,7 @@ pdf:
     - cat references.md >> pdf.md
     - echo "" >> pdf.md
     - echo "" >> pdf.md
-    - echo "## Glossary" >> pdf.md
+    - echo "## Additional Circuits" >> pdf.md
     - >
       for img in *.svg; do
         [ -f "$img" ] || break
@@ -216,7 +216,6 @@ pdf:
         fi
       done
     # Final md doc
-    - cat pdf.md
     - cat pdf.md
     # Render
     - | 
