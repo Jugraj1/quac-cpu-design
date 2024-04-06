@@ -94,7 +94,7 @@
         </entry>
         <entry>
           <string>Label</string>
-          <string>FLAG</string>
+          <string>OUTBOUNDS</string>
         </entry>
       </elementAttributes>
       <pos x="1480" y="-80"/>
