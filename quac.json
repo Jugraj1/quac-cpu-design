@@ -136,6 +136,22 @@
             "description": "Jump to the given immediate value address. (alias for `MOVL PC, IMM8`)",
             "pseudo": true,
             "class": "imm"
+        },
+        "MULT (reg)": {
+            "syntax": "MULT? {<RD:reg?RA>, } <RA:reg>, <RB:reg>",
+            "machine": "1000 C RD 0 RA 1 RB",
+            "semantic": "RD := RA + RB",
+            "description": "Multiplies the values in RA and RB and stores the result in RD",
+            "pseudo": false,
+            "class": "alu"
+        },
+        "DIV (reg)": {
+            "syntax": "DIV? {<RD:reg?RA>, } <RA:reg>, <RB:reg>",
+            "machine": "1000 C RD 1 RA 0 RB",
+            "semantic": "RD := RA + RB",
+            "description": "Divides the values in RA by RB and stores the result in RD",
+            "pseudo": false,
+            "class": "alu"
         }
     }
 }

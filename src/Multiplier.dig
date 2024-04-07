@@ -1,7 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <circuit>
   <version>2</version>
-  <attributes/>
+  <attributes>
+    <entry>
+      <string>backgroundColor</string>
+      <awt-color>
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+        <alpha>255</alpha>
+      </awt-color>
+    </entry>
+    <entry>
+      <string>romContent</string>
+      <romList>
+        <roms/>
+      </romList>
+    </entry>
+    <entry>
+      <string>Width</string>
+      <int>10</int>
+    </entry>
+  </attributes>
   <visualElements>
     <visualElement>
       <elementName>In</elementName>
@@ -94,10 +114,14 @@
         </entry>
         <entry>
           <string>Label</string>
-          <string>OUTBOUNDS</string>
+          <string>OUT</string>
+        </entry>
+        <entry>
+          <string>Bits</string>
+          <int>16</int>
         </entry>
       </elementAttributes>
-      <pos x="1480" y="-80"/>
+      <pos x="1700" y="-80"/>
     </visualElement>
     <visualElement>
       <elementName>Multiplexer</elementName>
@@ -270,14 +294,10 @@
         </entry>
         <entry>
           <string>Label</string>
-          <string>OUT</string>
-        </entry>
-        <entry>
-          <string>Bits</string>
-          <int>16</int>
+          <string>OUTBOUNDS</string>
         </entry>
       </elementAttributes>
-      <pos x="1700" y="-80"/>
+      <pos x="1480" y="-80"/>
     </visualElement>
     <visualElement>
       <elementName>Splitter</elementName>
@@ -1209,6 +1229,20 @@
       </elementAttributes>
       <pos x="1380" y="680"/>
     </visualElement>
+    <visualElement>
+      <elementName>Out</elementName>
+      <elementAttributes>
+        <entry>
+          <string>rotation</string>
+          <rotation rotation="1"/>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>Negative_Flag</string>
+        </entry>
+      </elementAttributes>
+      <pos x="1540" y="-80"/>
+    </visualElement>
   </visualElements>
   <wires>
     <wire>
@@ -1565,6 +1599,10 @@
     </wire>
     <wire>
       <p1 x="1440" y="220"/>
+      <p2 x="1540" y="220"/>
+    </wire>
+    <wire>
+      <p1 x="1540" y="220"/>
       <p2 x="1680" y="220"/>
     </wire>
     <wire>
@@ -1742,6 +1780,10 @@
     <wire>
       <p1 x="1540" y="900"/>
       <p2 x="1540" y="1120"/>
+    </wire>
+    <wire>
+      <p1 x="1540" y="-80"/>
+      <p2 x="1540" y="220"/>
     </wire>
     <wire>
       <p1 x="1480" y="-80"/>
