@@ -1,4 +1,0 @@
-.word 0x0102 @R1 = 2
-.word 0x020f @R2 = 15
-MULT R1, R2
-DIV R1, R2
