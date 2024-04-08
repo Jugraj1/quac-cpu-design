@@ -17,6 +17,10 @@ The enhancement involved adding a two-bit control signal, ALUOPEX, to the contro
 
 ## Analysis and Tradeoffs
 # Key benefits of my changes
+In traditional CPU design, the flag register is typically kept separate from the main register file for streamlined operations. This architectural decision facilitates efficient writing to the flag register by directly connecting the ALU's output (RESULT) to the flag register (FL) in our case. Similarly, reading from the flag register is simplified through the use of a multiplexer, which selects and outputs the relevant flag based on the selector bit during read operations.
+This separation optimizes the CPU's functionality and ease of use. Writing to the flag register is straightforward, requiring a direct connection from the ALU output. Reading from the flag register is also simplified, as the multiplexer efficiently handles the selection and output of the desired flag based on the read operation's requirements.
+By segregating the flag register from the main register file, this design approach promotes operational efficiency and maintains a clear and organized structure within the CPU architecture.
+
 Maintaining the multiplier and divider components within the ALU itself minimizes complications, as they are seamlessly integrated as integral components of the ALU, this also directly allows the modification of flags using a multiplexer. ALUOPEX was utilized to prevent alterations to the control unit, eliminating the need to consider the last three most significant bits of the opcode to identify the operation being performed. There is a drawback explained in the limitations/tradeoffs section but that drawback minimises the use of another register which is very expensive.
 In the multiplier component, I employed an adder to monitor the out-of-bounds flag, which might initially appear costly but isn't, given that the critical path is determined by the three-layer adder itself. Furthermore, the multiplier gains efficiency through parallel addition, where in the individual layer of adders, each result is independent of others. So computation takes place like (a + b) + (c + d) and not like ((a+b)+c)+d. It's noteworthy that in each adder, the carry input bit is deliberately set to low due to the absence of any expected carry output. This decision aligns with the considerations discussed in the limitations/tradeoffs section, particularly in the context of working with an 8-bit system.
 In the divider component, a separate component step_rem_compare was used in which the 1-bit output COMPARE directly corresponds to each bit of the quotient making the circuit much readable. 
@@ -29,4 +33,4 @@ In division, the resulting quotient, reflected in the least significant 8 bits, 
 Moreover, if a number exceeds 8 bits, the operation processes only the least significant 8 bits for multiplication or division and adjusts the corresponding flag accordingly.
 
 ## Testing 
-
+So the program in demo.quac multiplies two numbers stored in R1 and R2. Storing in R1 and R2 is done through the MOVL instruction. Then in the same program, multiplication of negative numbers is demonstrated taking two's complement into account.
