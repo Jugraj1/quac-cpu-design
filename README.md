@@ -3,7 +3,7 @@
 A single‑cycle **QuAC** (Quad‑Arithmetic‑Condition) CPU implemented in [*Digital*](https://github.com/hneemann/Digital) and extended beyond the base ISA with multiplication/division, flags, and robust error handling.
 
 > **Course** : Australian National University – COMP2300  
-> **Year**    : 2024/25  
+> **Year**    : 2024 
 > **Author**  : Jugraj Singh (@Jugraj1)
 
 ---
