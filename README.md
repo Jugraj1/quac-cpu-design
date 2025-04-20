@@ -1,4 +1,4 @@
-# QuAC CPU Design — COMP2300 Assignment 1 🚀
+# QuAC CPU Design — ANU Project 🚀
 
 A single‑cycle **QuAC** (Quad‑Arithmetic‑Condition) CPU implemented in [*Digital*](https://github.com/hneemann/Digital) and extended beyond the base ISA with multiplication/division, flags, and robust error handling.
 
